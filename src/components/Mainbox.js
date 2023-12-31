@@ -88,7 +88,7 @@ export default function Mainbox() {
           />
           <CardContent>
             <Typography sx={{ textAlign: 'center', fontSize: 30 }} variant="body1">{weatherData.weather}</Typography>
-            <Typography sx={{ textAlign: 'center', fontSize: 32 }} variant="body1">{weatherData.celsius}°C</Typography>
+            <Typography sx={{ textAlign: 'center', fontSize: 32 }} variant="body1">{weatherData.celcius}°C</Typography>
           </CardContent>
         </Box>
         <Box sx={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: isMobile ? 'center' : 'flex-start' }}>
