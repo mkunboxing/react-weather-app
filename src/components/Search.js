@@ -3,10 +3,13 @@ import { useState } from 'react';
 import { Stack, Button, Box, Autocomplete, TextField } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import MyLocationIcon from '@mui/icons-material/MyLocation';
-import { getWeather, getWeatherByCoords } from '../services/api';
 
+import { useDispatch } from 'react-redux'
+import { getWeatherDataByLatAndLon, getWeatherDataByCityName } from '../store/weather'
 
 export default function Search({ updateWeather }) {
+
+  const dispatch = useDispatch()
 
   const [city, setCity] = useState('');
 
@@ -16,8 +19,7 @@ export default function Search({ updateWeather }) {
 
   const getWeatherInfo = async () => {
     try {
-      const response = await getWeather(city);
-      updateWeather(response);
+      dispatch(getWeatherDataByCityName(city))
     } catch (error) {
       console.log(error.message);
     }
@@ -28,8 +30,7 @@ export default function Search({ updateWeather }) {
       navigator.geolocation.getCurrentPosition(async (position) => {
         try {
           const { latitude, longitude } = position.coords;
-          const response = await getWeatherByCoords(latitude, longitude);
-          updateWeather(response);
+          dispatch(getWeatherDataByLatAndLon({ lat: latitude, lon: longitude }))
         } catch (error) {
           console.log(error.message);
         }
