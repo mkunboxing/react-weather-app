@@ -21,22 +21,25 @@ export default function Mainbox() {
 
 
   useEffect(() => {
-    if (weatherData.weather === 'Clouds') {
-      setIcon(cloudyImage);
-    } if (weatherData.weather === 'few clouds') {
-      setIcon(fewClouds);
-    } if (weatherData.weather === 'Clear') {
-      setIcon(sunny);
-    } if (weatherData.weather === 'Mist') {
-      setIcon(mist);
-    } if (weatherData.weather === 'Rain') {
-      setIcon(rainy);
-    } if (weatherData.weather === 'Snow') {
-      setIcon(snow);
-    } if (weatherData.weather === 'Thunderstorm') {
-      setIcon(thunderstorm);
+    if (weatherData && weatherData.weather) {
+      if (weatherData.weather === 'Clouds') {
+        setIcon(cloudyImage);
+      } else if (weatherData.weather === 'few clouds') {
+        setIcon(fewClouds);
+      } else if (weatherData.weather === 'Clear') {
+        setIcon(sunny);
+      } else if (weatherData.weather === 'Mist') {
+        setIcon(mist);
+      } else if (weatherData.weather === 'Rain') {
+        setIcon(rainy);
+      } else if (weatherData.weather === 'Snow') {
+        setIcon(snow);
+      } else if (weatherData.weather === 'Thunderstorm') {
+        setIcon(thunderstorm);
+      }
     }
-  }, [weatherData])
+  }, [weatherData]);
+  
 
 
 
