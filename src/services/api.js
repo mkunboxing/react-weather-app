@@ -6,7 +6,7 @@ const API_URL= 'https://api.openweathermap.org/data/2.5/weather'
 export const getWeather = async (city) => {
 
     try{
-      let response = await axios.get(`${API_URL}?q=${city}&appid=59a4684f9a7b2e6e2bb5d87da613d7af&units=metric`)
+      let response = await axios.get(`${API_URL}?q=${city}&appid=a7b2e6e2bb5d87da613d7af&units=metric`)
       return response.data;
     }
     catch(error){
@@ -18,7 +18,7 @@ export const getWeather = async (city) => {
 
 export const getWeatherByCoords = async (latitude, longitude) => {
     const API_KEY = process.env.REACT_APP_API_KEY;
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=59a4684f9a7b2e6e2bb5d87da613d7af&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=a7b2e6e2bb5d87da613d7af&units=metric`;
     
     try {
       const response = await fetch(apiUrl);

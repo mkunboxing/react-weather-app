@@ -1,7 +1,7 @@
 import './App.css';
 import { Container , Typography } from '@mui/material';
 import MainBox from './components/Mainbox';
-import FreeSolo from './components/Search';
+
 
 
 function App() {
